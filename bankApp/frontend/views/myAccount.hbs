@@ -1,0 +1,30 @@
+{{>header}}
+{{>nav}}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Amount</th>
+      <th scope="col">Date</th>
+      <th scope="col">Location</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each result}}
+    <tr>
+      <th scope="row">{{this.amount}}</th>
+      <td>{{this.date}}</td>
+      <td>{{this.location}}</td>
+      <td>
+          <div class="btn-group" role="group" aria-label="Basic example">
+           <a href="/edit/{{this._id}}" ><button type="button" class="btn btn-success">Edit</button></a>
+            <a href="/delete/{{this._id}}" ><button type="button" class="btn btn-danger">Delete</button></a>
+            <a href="/showsingle/{{this._id}}" ><button type="button" class="btn btn-primary">Show</button></a>
+        </div>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+{{>footer}}
